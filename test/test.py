@@ -9,12 +9,12 @@ import traceback
 sim = Simulation([70, 50], {"cell_size": 0.008})
 
 sim.drawFillFromMaterial(MATERIALS.AIR)
-sim.drawRectFromMaterial(MATERIALS.COPPER, [0, 10], [70, 20])
+sim.drawRectFromMaterial(MATERIALS.ALUMINIUM, [0, 10], [70, 20])
 sim.drawRectFromMaterial(MATERIALS.COPPER, [0, 0], [10, 40])
 sim.drawRect('TemperatureField', 400, [0, 0], [10, 40])
 
+sim.showField('DensityField')
 sim.showField('TemperatureField')
-# sim.showField('DensityField')
 
 def update(event):
     try:

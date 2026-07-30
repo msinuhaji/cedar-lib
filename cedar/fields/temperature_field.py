@@ -1,27 +1,25 @@
 # cedar/fields/temperature_field.py
 import numpy
-from cedar.helpers.tensor_discrete_calculus import tensor_centre_laplacian
+from cedar.helpers.raster_operations import tensor_centre_laplacian
 from cedar.fields.base_field_class import BaseField
 
 class TemperatureField(BaseField):
-    def __init__(self, simulation):
-        super().__init__(simulation)
 
     def solve(self, dt):
-        h = self._simulation._cell_size
-        k = self._simulation._fields["ThermalConductivityField"].raster
-        denominator = (
+        cell_size = self._simulation._cell_size
+        thermal_conductivity = self._simulation._fields["ThermalConductivityField"].raster
+        density_times_heat_capacity = (
             self._simulation._fields["DensityField"].raster
             * self._simulation._fields["HeatCapacityField"].raster
         )
 
         diffusivity = numpy.divide(
-            k, denominator,
-            out=numpy.zeros_like(k),
-            where=denominator > 0
+            thermal_conductivity, density_times_heat_capacity,
+            out=numpy.zeros_like(thermal_conductivity),
+            where=density_times_heat_capacity > 0
         )
 
-        laplacian = tensor_centre_laplacian(self.raster, h=h)
+        laplacian = tensor_centre_laplacian(self.raster, h=cell_size)
 
         out = self.copy()
         out.raster = self.raster + dt * diffusivity * laplacian
