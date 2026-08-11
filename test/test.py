@@ -1,6 +1,3 @@
-# NOTE: NEXT UPDATE ABSTRACTS SIGNIFICANTLY
-# TODO TOMORROW: CREATE BASE FIELD CLASS, IMPROVE RENDERING, MAKE MATERIAL FIELD WORK!
-
 from vispy import app
 from cedar.simulation import Simulation
 from cedar.helpers.material_dictionary import MATERIALS
