@@ -1,21 +1,17 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "cedar"
-version = "0.1.0"
-description = "A raster simulation and optimisation library"
-readme = "README.md"
+version = "0.0.1"
+description = "Computational Engine for Designing Architecture Rasters"
 requires-python = ">=3.10"
-
-authors = [
-    {name = "Mushthafa Sinuhaji"}
-]
-
 dependencies = [
     "numpy",
-    "numba",
-    "vispy",
-    "PyQt6"
+    "scipy",
+    "pyqtgraph"
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]

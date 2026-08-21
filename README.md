@@ -1,8 +1,3 @@
-# CEDAR
-Computational Engine for Designing Architecture Rasters (CEDAR) is a physics simulation written in Python, meant for simulating thermal and electrical inefficiency within computational substrates. Meant for my research paper.
+#CEDAR-DEODARA-LIBANI
 
-## DEODARA
-Differentiable Efficiency Optimisation of Discrete Architectures Recursive Algorithm (DEODARA) is the Pareto DARTS-like optimisation algorithm to be applied to the discrete hardware rasters. It explores a landscape of already optimised models. It trains the model first, before measuring inefficiencies and changing the model (the architecture raster holding it) accordingly. It executes supervised learning.
-
-## LIBANI
-Lower Inefficiencies By Architecture, Non-Intrusively (LIBANI) is the non-bilevel optimisation counterpart to DEODARA. It does not 'intrude' the process by interleaving model alterations with pretraining, rather, it optimises the cost vector directly and immediately.
+The purpose of the CEDAR-DEODARA-LIBANI project is as follows: (1) CEDAR is meant to realistically simulate physical electronics and operate an ANN hosted on various physical substrates, (2) these ANNs are meant to be optimized physically through gradient-led NW-HAS algorithms, (3) the computational engine and optimization algorithms are meant to be able to compute an entire Pareto frontier of candidate ANN models within a modest search time, and (4) the CEDAR software must be able to accurately represent CMOS circuitry to a quantitative margin of error with real-world calibrations.
