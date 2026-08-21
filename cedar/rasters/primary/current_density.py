@@ -1,6 +1,6 @@
 from cedar.raster import Raster
 
-class Permittivity(Raster):
+class CurrentDensity(Raster):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
